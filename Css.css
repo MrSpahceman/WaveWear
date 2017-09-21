@@ -1,0 +1,51 @@
+body {
+    background-image: url(http://i.imgur.com/3vbQZ.gif);
+    background-size: cover;
+}
+
+#transparent {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.panel {
+    background-color: rgba(255, 255, 255, .15);
+}
+
+p {
+    color: black;
+}
+
+
+/*This is for the loading image that does not work yet*/
+
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(http://i.imgur.com/3vbQZ.gif) 50% 50% no-repeat rgb(249, 249, 249);
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+  These rules take effect when the browser's width
+  is either 768px or less.The gif will never change
+*/
+
+@media screen and (max-width: 768px) {
+    /* The body's bg color will be #333 */
+    body {
+        background-image: url(http://i.imgur.com/3vbQZ.gif);
+    }
+}
