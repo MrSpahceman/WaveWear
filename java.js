@@ -12,21 +12,21 @@ var currentTime = new Date(),
 console.log(hours);
 
 function initMap(coordinates) {
-        var uluru = coordinates;
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 10,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
+    var uluru = coordinates;
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: uluru
+    });
+    var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+    });
+}
 
 navigator.geolocation.getCurrentPosition(function(position) {
-    
-    var coords = { 
-        lat: position.coords.latitude, 
+
+    var coords = {
+        lat: position.coords.latitude,
         lng: position.coords.longitude
     };
     console.log(coords.lat, coords.lng);
@@ -36,8 +36,8 @@ navigator.geolocation.getCurrentPosition(function(position) {
     var spotPick = '';
     var object = '';
     var swell = '';
-    var tide= '';
-    var wind= '';
+    var tide = '';
+    var wind = '';
 
     // Storing our google API URL for refence to use
     var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + coords.lat + "," + coords.lng + "&key=AIzaSyBDvAwRHZIzy1VI4eUADeiPPcC76USV94Q";
@@ -93,8 +93,8 @@ navigator.geolocation.getCurrentPosition(function(position) {
                                 console.log("this is spot pick: " + spotPick);
                                 $(".carlosSpotPickClass").html(spotPick);
                                 $(".carlosCountyClass").html(county);
-                                $(".carlosTempClass").html(temp);
-                                $(".carlosCountyClass").html(county);    
+
+
 
                                 var queryURL3 = "https://cors.io/?http://api.spitcast.com/api/spot/forecast/" + spotid
                                 $.ajax({
@@ -106,23 +106,27 @@ navigator.geolocation.getCurrentPosition(function(position) {
                                     console.log(response);
                                     if (hours > 12) {
                                         hours = (hours - 12 + "PM");
-                                    }
-                                    if (hours === 12) {
-                                        hours = (hours +"PM");
+                                    } else if (hours === 12) {
+                                        hours = (hours + "PM");
                                     } else {
-                                        hours = (hours +"AM");
+                                        hours = (hours + "AM");
                                     }
                                     console.log("this is hours:  " + hours);
                                     for (var key in response) {
                                         if (response[key].hour === hours) {
                                             console.log(response[key])
                                             var object = response[key]
+                                            swell = response[key].shape_detail.swell;
+                                            tide = response[key].shape_detail.tide;
+                                            wind = response[key].shape_detail.wind;
                                             console.log(response[key].shape_detail.swell);
                                             console.log(response[key].shape_detail.tide);
                                             console.log(response[key].shape_detail.wind);
                                             $(".carlosSwellClass").html(swell);
                                             $(".carlosTideClass").html(tide);
                                             $(".carlosWindClass").html(wind);
+
+
                                         }
                                     }
                                 });
@@ -145,6 +149,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
                         $(".carlosTempClass").html(temperature);
                         var clothing = (response.wetsuit);
                         $(".carlosClothingclass").html(clothing);
+
                     });
                 });
             } else {

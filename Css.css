@@ -12,19 +12,17 @@ body {
 }
 
 p,
-h2 {
+h2,
+h3 {
     font-family: "Times New Roman", Times, serif;
     font-size: 30px;
-    color: black;
+    color: Black;
 }
 
-
-
-
-
-
-
-
+b,
+strong {
+    color: Black;
+}
 
 
 
@@ -42,18 +40,42 @@ h2 {
 #map {
     height: 300px;
     width: 50%;
-    left: 90px;
+    left: 280px;
     /*Carlos added floats*/
     float: left;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*carlos moved drop down to be next to map*/
 
 .dropdown {
     float: right;
-    right: 300px;
+    right: 200px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -89,6 +111,18 @@ h2 {
     z-index: 9999;
     background: url(http://i.imgur.com/3vbQZ.gif) 50% 50% no-repeat rgb(249, 249, 249);
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
