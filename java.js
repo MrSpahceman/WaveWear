@@ -7,8 +7,8 @@ console.log("I'm ready")
 var spotPick;
 
 var currentTime = new Date(),
-      hours = currentTime.getHours();
-    console.log(hours);
+    hours = currentTime.getHours();
+console.log(hours);
 
 navigator.geolocation.getCurrentPosition(function(position) {
     var lat = position.coords.latitude;
@@ -60,60 +60,61 @@ navigator.geolocation.getCurrentPosition(function(position) {
                     console.log('spitcast response');
                     console.log(response);
                     //for (i = 0; i < response.length; i++) {
-                        //var spotNames = (response[i].spot_name);
-                        //console.log(spotNames);
+                    //var spotNames = (response[i].spot_name);
+                    //console.log(spotNames);
                     console.log('spitcast response');
-                            for (var key in response) {
-                            var spotIDList=$(response[key].spot_id)
-                            var newList=$("<li><a href='#''>"+response[key].spot_name+"</a></li>")
+                    for (var key in response) {
+                        var spotIDList = $(response[key].spot_id)
+                        var newList = $("<li><a href='#''>" + response[key].spot_name + "</a></li>")
                             .data('spotid', response[key].spot_id)
                             .on('click', function(e) {
-                            spotPick = $(this).find('a').text();
-                            spotid = $(this).data("spotid")
-                            console.log(spotPick);
-                            
-                         var queryURL3 = "https://cors.io/?http://api.spitcast.com/api/spot/forecast/" + spotid
-                        $.ajax({
-                            url: queryURL3,
-                            method: "GET",
-                            dataType: 'json',
-                        }).done(function(response) {
-                            console.log('spitcast spot conditions response');
-                            console.log (response);
-                            if (hours > 12){
-                                hours = (hours -12 + "PM");
-                            }
-                            console.log (hours);
+                                spotPick = $(this).find('a').text();
+                                spotid = $(this).data("spotid")
+                                console.log(spotPick);
 
-                            for (var key in response){
-                                if(response[key].hour === hours){
-                                    console.log(response[key])
-                                    var object = response[key]
-                                        console.log(response[key].shape_detail.swell);
-                                        console.log(response[key].shape_detail.tide);
-                                        console.log(response[key].shape_detail.wind);
-                                }
-                            }
-                        });
+                                var queryURL3 = "https://cors.io/?http://api.spitcast.com/api/spot/forecast/" + spotid
+                                $.ajax({
+                                    url: queryURL3,
+                                    method: "GET",
+                                    dataType: 'json',
+                                }).done(function(response) {
+                                    console.log('spitcast spot conditions response');
+                                    console.log(response);
+                                    if (hours > 12) {
+                                        hours = (hours - 12 + "PM");
+                                    }
+                                    console.log(hours);
+
+                                    for (var key in response) {
+                                        if (response[key].hour === hours) {
+                                            console.log(response[key])
+                                            var object = response[key]
+                                            console.log(response[key].shape_detail.swell);
+                                            console.log(response[key].shape_detail.tide);
+                                            console.log(response[key].shape_detail.wind);
+                                        }
+                                    }
+                                });
 
 
                             });
-                            newList.appendTo("#listlistlist");
+                        newList.appendTo("#listlistlist");
+
                     }
 
                     var queryURL2 = "https://cors.io/?http://api.spitcast.com/api/county/water-temperature/" + county
-                        $.ajax({
-                            url: queryURL2,
-                            method: "GET",
-                            dataType: 'json',
-                        }).done(function(response) {
-                            console.log('spitcast temperature response');
-                            console.log(response);
+                    $.ajax({
+                        url: queryURL2,
+                        method: "GET",
+                        dataType: 'json',
+                    }).done(function(response) {
+                        console.log('spitcast temperature response');
+                        console.log(response);
                         var temperature = (response.temperature);
-                            console.log (response.fahrenheit);
+                        console.log(response.fahrenheit);
                         var clothing = (response.wetsuit);
-                            console.log(clothing);
-                        });
+                        console.log(clothing);
+                    });
                 });
             } else {
                 console.log("Bad or Missing County");
