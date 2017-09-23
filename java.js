@@ -10,14 +10,37 @@ var currentTime = new Date(),
     hours = currentTime.getHours();
 console.log(hours);
 
+
+
+//RACHEL//
+function initMap(coordinates) {
+        var uluru = coordinates;
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+
+      
+
 navigator.geolocation.getCurrentPosition(function(position) {
-    var lat = position.coords.latitude;
-    var long = position.coords.longitude;
-    console.log(lat, long);
-    $("p").append(lat, long);
+    
+    var coords = { 
+        lat: position.coords.latitude, 
+        lng: position.coords.longitude
+    };
+    console.log(coords.lat, coords.lng);
+    $("p").append(coords.lat, coords.lng);
+    initMap(coords);
+
+
 
     // Storing our google API URL for refence to use
-    var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyBDvAwRHZIzy1VI4eUADeiPPcC76USV94Q";
+    var queryURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + coords.lat + "," + coords.lng + "&key=AIzaSyBDvAwRHZIzy1VI4eUADeiPPcC76USV94Q";
 
     // Perfoming an AJAX GET request to our queryURL
     $.ajax({
