@@ -149,20 +149,21 @@ navigator.geolocation.getCurrentPosition(function(position) {
                         $(".carlosTempClass").html(temperature);
                         var clothing = (response.wetsuit);
                         $(".carlosClothingclass").html(clothing);
-                    if (clothing === "1mm Wetsuit"){
-                     $(".wetsuits").html('<img src="./assets/1MM.jpg>" height="100px"');
+                        $(".wetsuits").append('<img src="./assets/1MM.jpg" height="100px"/>');
+                    if (clothing == "1mm Wetsuit"){
+                     $(".wetsuits").html('<img src="./assets/1MM.jpg" height="300px"/>');
                     }
-                    else if (clothing === "2mm Wetsuit"){
-                         $(".wetsuits").html('<img src="./assets/2MM.jpg>" height="100px"');
+                    else if (clothing == "2mm Wetsuit"){
+                         $(".wetsuits").html('<img src="./assets/2MM.jpg" height="300px"/>');
                     }
-                    else if (clothing === "3mm Wetsuit"){
-                         $(".wetsuits").html('<img src="./assets/3MM.jpg>" height="100px"');
+                    else if (clothing == "3mm Wetsuit"){
+                         $(".wetsuits").html('<img src="./assets/3MM.jpg" height="300px"/>');
                     }
-                    else if (clothing === "4mm Wetsuit"){
-                        $(".wetsuits").html('<img src="./assets/4MM.jpg>" height="100px"');
+                    else if (clothing == "4mm Wetsuit"){
+                        $(".wetsuits").html('<img src="./assets/4MM.jpg" height="300px"/>');
                     }
                     else {
-                       $(".wetsuits").html('<img src="./assets/BoardShorts.jpg>" height="100px"');
+                       $(".wetsuits").html('<img src="./assets/BoardShorts.jpg" height="300px"/>');
                     }
 
                     });
