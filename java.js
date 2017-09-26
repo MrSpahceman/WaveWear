@@ -74,7 +74,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
             // Get Spitcast for County
             console.log("We know where you are: " + county);
             if (county.length) {
-                var queryURL = "https://cors.io/?http://api.spitcast.com/api/county/spots/" + county
+                var queryURL = "https://cors-anywhere.herokuapp.com/http://api.spitcast.com/api/county/spots/" + county
                 $.ajax({
                     url: queryURL,
                     method: "GET",
@@ -96,7 +96,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
 
 
 
-                                var queryURL3 = "https://cors.io/?http://api.spitcast.com/api/spot/forecast/" + spotid
+                                var queryURL3 = "https://cors-anywhere.herokuapp.com/http://api.spitcast.com/api/spot/forecast/" + spotid
                                 $.ajax({
                                     url: queryURL3,
                                     method: "GET",
@@ -137,7 +137,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
 
                     }
 
-                    var queryURL2 = "https://cors.io/?http://api.spitcast.com/api/county/water-temperature/" + county
+                    var queryURL2 = "https://cors-anywhere.herokuapp.com/http://api.spitcast.com/api/county/water-temperature/" + county
                     $.ajax({
                         url: queryURL2,
                         method: "GET",
@@ -149,6 +149,21 @@ navigator.geolocation.getCurrentPosition(function(position) {
                         $(".carlosTempClass").html(temperature);
                         var clothing = (response.wetsuit);
                         $(".carlosClothingclass").html(clothing);
+                    if (clothing === "1mm Wetsuit"){
+                     $(".wetsuits").html('<img src="./assets/1MM.jpg>" height="100px"');
+                    }
+                    else if (clothing === "2mm Wetsuit"){
+                         $(".wetsuits").html('<img src="./assets/2MM.jpg>" height="100px"');
+                    }
+                    else if (clothing === "3mm Wetsuit"){
+                         $(".wetsuits").html('<img src="./assets/3MM.jpg>" height="100px"');
+                    }
+                    else if (clothing === "4mm Wetsuit"){
+                        $(".wetsuits").html('<img src="./assets/4MM.jpg>" height="100px"');
+                    }
+                    else {
+                       $(".wetsuits").html('<img src="./assets/BoardShorts.jpg>" height="100px"');
+                    }
 
                     });
                 });
