@@ -1,9 +1,46 @@
 /*This is the Gif for the entire webpage*/
 
 body {
-    background-image: url(http://i.imgur.com/3vbQZ.gif);
-    background-size: cover;
+    /*background-image: url(http://i.imgur.com/3vbQZ.gif);*/
+    /*background-size: cover;*/
 }
+
+#color {
+    background-color: #F4DCB5;
+    height: 260px;
+}
+
+#paragraph {
+    background-color: #97EAF4;
+}
+
+.container-fliuid {
+    background-color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -15,13 +52,40 @@ body {
 
 
 
+
+
+
+.panel-footer {
+    background-color: #007996;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*the background color here is allowing the GIF to be seen for the panel*/
 
 .panel {
-    background-color: rgba(255, 255, 255, .15);
+    /*background-color: rgba(255, 255, 255, .15);*/
 }
 
-p,
+
 h2,
 h3 {
     font-family: "Times New Roman", Times, serif;
@@ -32,7 +96,66 @@ h3 {
 b,
 strong {
     color: Black;
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+    line-height: 46px;
+    font-size: 46px;
+    margin: 0 0 23px 0;
 }
+
+h1 {
+    font-family: 'Amatic SC', cursive;
+    font-weight: 700;
+    line-height: 46px;
+    font-size: 46px;
+    margin: 0 0 23px 0;
+}
+
+# {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 900px;
+    line-height: 23px;
+    margin: 0 0 23px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -85,6 +208,32 @@ img:hover {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Rachels Map CSS code*/
 
 #map {
@@ -119,27 +268,18 @@ img:hover {
 
 
 
+
+
+
+
+
+
 /*carlos moved drop down to be next to map*/
 
 .dropdown {
     float: right;
     right: 200px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -214,40 +354,15 @@ img:hover {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
   These rules take effect when the browser's width
   is either 768px or less.The gif will never change
 */
 
-@media screen and (max-width: 768px) {
-    /* The body's bg color will be #333 */
-    body {
+
+/*@media screen and (max-width: 768px) {
+    The body's bg color will be #333 
+ body {
         background-image: url(http://i.imgur.com/3vbQZ.gif);
     }
-}
+}*/
