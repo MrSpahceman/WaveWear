@@ -82,13 +82,13 @@ navigator.geolocation.getCurrentPosition(function(position) {
                     console.log('spitcast response');
                     for (var key in response) {
                         var spotIDList = $(response[key].spot_id)
-                        var newList = $("<li><a href='#''>" + response[key].spot_name + "</a></li>")
+                        var newList = $("<li><a>" + response[key].spot_name + "</a></li>")
                             .data('spotid', response[key].spot_id)
                             .on('click', function(e) {
                                 $("carlosSwellClass").empty();
                                 $("carlosTideClass").empty();
                                 $("carlosWindClass").empty();
-                                hours = 0 + "";
+                                 hours = 0 + "";
                                 var currentTime = new Date(),
                                 hours = currentTime.getHours();
                                 console.log(hours);
@@ -96,6 +96,10 @@ navigator.geolocation.getCurrentPosition(function(position) {
                                 spotid = $(this).data("spotid")
                                 console.log("this is spot pick: " + spotPick);
                                 $(".carlosSpotPickClass").html("You picked: " + spotPick);
+                                if (spotPick == "Blacks Beach") {
+                                $(".wetsuits").empty().html('<img src="./assets/Blacks.jpg" height="300px"/>');
+                                $(".carlosClothingclass").empty().html("Clothing optional!");
+                                }
                               
 
 
@@ -154,7 +158,6 @@ navigator.geolocation.getCurrentPosition(function(position) {
                         var clothing = (response.wetsuit);
                         $(".carlosClothingclass").html("You should wear " + clothing);
                         $(".carlosCountyClass").html("You are in: " + originalCounty);
-                        $(".wetsuits").append('<img src="./assets/1MM.jpg" height="100px"/>');
                     if (clothing == "1mm Wetsuit"){
                      $(".wetsuits").html('<img src="./assets/1MM.jpg" height="300px"/>');
                     }

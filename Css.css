@@ -1,7 +1,7 @@
 
 body {
-/*    background-image: url(http://i.imgur.com/3vbQZ.gif);
-*/
+    background-image: url(assets/blue.jpg);
+
 }
 
 #color {
@@ -56,10 +56,11 @@ h1 {
 p,
 .footer {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 23px;
     margin: 0 0 23px 0;
     text-align: center;
+
 }
 
 /*Making the shorts shake*/
