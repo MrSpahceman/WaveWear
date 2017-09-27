@@ -97,7 +97,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
                                 console.log("this is spot pick: " + spotPick);
                                 $(".carlosSpotPickClass").html("You picked: " + spotPick);
                                 if (spotPick == "Blacks Beach") {
-                                $(".wetsuits").empty().html('<img src="./assets/Blacks.jpg" height="300px"/>');
+                                $(".wetsuits").empty().html('<img src="./assets/Blacks.png" height="300px"/>');
                                 $(".carlosClothingclass").empty().html("Clothing optional!");
                                 }
                               
@@ -159,19 +159,19 @@ navigator.geolocation.getCurrentPosition(function(position) {
                         $(".carlosClothingclass").html("You should wear " + clothing);
                         $(".carlosCountyClass").html("You are in: " + originalCounty);
                     if (clothing == "1mm Wetsuit"){
-                     $(".wetsuits").html('<img src="./assets/1MM.jpg" height="300px"/>');
+                     $(".wetsuits").html('<img src="./assets/1MM.png" height="300px"/>');
                     }
                     else if (clothing == "2mm Wetsuit"){
-                         $(".wetsuits").html('<img src="./assets/2MM.jpg" height="300px"/>');
+                         $(".wetsuits").html('<img src="./assets/2MM.png" height="300px"/>');
                     }
                     else if (clothing == "3mm Wetsuit"){
-                         $(".wetsuits").html('<img src="./assets/3MM.jpg" height="300px"/>');
+                         $(".wetsuits").html('<img src="./assets/3MM.png" height="300px"/>');
                     }
                     else if (clothing == "4mm Wetsuit"){
-                        $(".wetsuits").html('<img src="./assets/4MM.jpg" height="300px"/>');
+                        $(".wetsuits").html('<img src="./assets/4MM.png" height="300px"/>');
                     }
                     else {
-                       $(".wetsuits").html('<img src="./assets/BoardShorts.jpg" height="300px"/>');
+                       $(".wetsuits").html('<img src="./assets/BoardShorts.png" height="300px"/>');
                     }
 
                     });
