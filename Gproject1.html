@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDvAwRHZIzy1VI4eUADeiPPcC76USV94Q&callback=initMap"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:700|Amatic+SC:700" rel="stylesheet" type="text/css" />
@@ -16,38 +15,56 @@
     <title>Wave Wear</title>
 </head>
 
-<body>
-    <!-- The jumbotron containing group project name -->
-    <div class="jumbotron" id="color">
-        <img src="Assetts/Logo.png" alt="" class="img Logo" style="margin-left:auto; margin-right:auto;height: 200px" <h2 class="text-center"><strong>Welcome to Wave Wear
-            </strong></h2>
-        <!-- Rachels google map -->
-        <div class="panel panel-default" id="paragraph">
-            <p id="pretty">Wave Ware helps you decide what to wear on your next surf by pulling the temperature and other conditions of your surf spot. In order to find surf spots nearby you need to allow Wave Wear to see your location.</p>
-            <div id="map"></div>
-            <!-- This are the drop down butttons -->
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose Your Surf Spot
-                    <span class="caret"></span></button>
-                <ul class="dropdown-menu" id="listlistlist" aria-labelledby="dropdownMenu1">
-                </ul>
-            </div>
-        </div>
-<div>You Picked:
-                <div class="carlosSpotPickClass"></div>
-                <div class="carlosCountyClass"></div>
-                <div class="carlosSwellClass"></div>
-                <div class="carlosTideClass"></div>
-                <div class="carlosWindClass"></div>
-                <div class="carlosTempClass"></div>
-                <div class="carlosClothingclass"></div>
-                <div class="wetsuits"></div>
-            </div>
+<div class="row">
+    <div class="col-4" id="color">
+        <img src="Assets/Logo.png" class="img Logo" height="200px">
     </div>
-</body>
-<!-- Footer added -->
-<div class="panel panel-default" id="transparent">
-    <div class="panel-footer" id="transparent"><strong> Footer</strong></div>
+    <div class="col-8" id="color">
+       <h2 class="vert"> <strong>Welcome to Wave Wear</strong> </h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col" id="color">
+        <p>
+        Wave Ware helps you decide what to wear on your next surf by pulling the temperature and other conditions of your surf spot. </br>In order to find surf spots nearby you need to allow Wave Wear to see your location.
+        </p> 
+    </div>
+</div>
+<div class="row">
+    <div class="col-6" id="color">
+        <div id="map"></div>
+    </div>
+    <div class="col-6" id="color">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="ourButton">Choose Your Surf Spot
+            </button>
+            <ul class="dropdown-menu" id="listlistlist" aria-labelledby="dropdownMenu1">
+            </ul>
+         </div>
+    </div>
 </div>
 
+<div class="row" id="response">
+    <div class="col-6">
+        <p class="carlosCountyClass"></p>
+        <p class="carlosTempClass"></p>
+        <p class="carlosClothingclass"></p>
+        <p class="wetsuits"></p>
+    </div>
+    <div class="col-6">
+        <p class="carlosSpotPickClass"></p>
+        <p class="carlosSwellClass"</p>
+        <p class="carlosTideClass"></p>
+        <p class="carlosWindClass"></p>      
+    </div>
+</div>
+
+<div class="row" id="color">
+  <div class="col">
+      <div class="footer">Powered by <a href="http://www.spitcast.com">Spitcast.com</a></strong>
+      </div>
+  </div>
+</div>
+
+</body>
 </html>

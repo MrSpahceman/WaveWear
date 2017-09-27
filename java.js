@@ -7,9 +7,7 @@ console.log("I'm ready")
 
 
 
-var currentTime = new Date(),
-    hours = currentTime.getHours();
-console.log(hours);
+
 
 function initMap(coordinates) {
     var uluru = coordinates;
@@ -30,8 +28,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
         lng: position.coords.longitude
     };
     console.log(coords.lat, coords.lng);
-    $("p").append(coords.lat, coords.lng);
-    initMap(coords);
+        initMap(coords);
 
     var spotPick = '';
     var object = '';
@@ -61,10 +58,10 @@ navigator.geolocation.getCurrentPosition(function(position) {
                 if ((results[i].types.indexOf("administrative_area_level_2")) !== -1) {
 
                     console.log(results[i].types);
-                    county = (results[i].address_components[0].long_name);
+                    originalCounty = (results[i].address_components[0].long_name);
                     //console.log(county);
                     console.log("Ready");
-                    county = county.replace(/\sCounty/gi, "");
+                    county = originalCounty.replace(/\sCounty/gi, "");
                     county = county.replace(/\s/g, "-");
                     county = county.toLowerCase();
                     break;
@@ -88,11 +85,18 @@ navigator.geolocation.getCurrentPosition(function(position) {
                         var newList = $("<li><a href='#''>" + response[key].spot_name + "</a></li>")
                             .data('spotid', response[key].spot_id)
                             .on('click', function(e) {
+                                $("carlosSwellClass").empty();
+                                $("carlosTideClass").empty();
+                                $("carlosWindClass").empty();
+                                hours = 0 + "";
+                                var currentTime = new Date(),
+                                hours = currentTime.getHours();
+                                console.log(hours);
                                 spotPick = $(this).find('a').text();
                                 spotid = $(this).data("spotid")
                                 console.log("this is spot pick: " + spotPick);
-                                $(".carlosSpotPickClass").html(spotPick);
-                                $(".carlosCountyClass").html(county);
+                                $(".carlosSpotPickClass").html("You picked: " + spotPick);
+                              
 
 
 
@@ -122,9 +126,9 @@ navigator.geolocation.getCurrentPosition(function(position) {
                                             console.log(response[key].shape_detail.swell);
                                             console.log(response[key].shape_detail.tide);
                                             console.log(response[key].shape_detail.wind);
-                                            $(".carlosSwellClass").html(swell);
-                                            $(".carlosTideClass").html(tide);
-                                            $(".carlosWindClass").html(wind);
+                                            $(".carlosSwellClass").html("The swell is: " + swell);
+                                            $(".carlosTideClass").html("The tide is: " + tide);
+                                            $(".carlosWindClass").html("The wind is: " + wind);
 
 
                                         }
@@ -146,9 +150,10 @@ navigator.geolocation.getCurrentPosition(function(position) {
                         console.log('spitcast temperature response');
                         console.log(response);
                         var temperature = (response.fahrenheit);
-                        $(".carlosTempClass").html(temperature);
+                        $(".carlosTempClass").html("Where the water is " + temperature + " &deg;F");
                         var clothing = (response.wetsuit);
-                        $(".carlosClothingclass").html(clothing);
+                        $(".carlosClothingclass").html("You should wear " + clothing);
+                        $(".carlosCountyClass").html("You are in: " + originalCounty);
                         $(".wetsuits").append('<img src="./assets/1MM.jpg" height="100px"/>');
                     if (clothing == "1mm Wetsuit"){
                      $(".wetsuits").html('<img src="./assets/1MM.jpg" height="300px"/>');
